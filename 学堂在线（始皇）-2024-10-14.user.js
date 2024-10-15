@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         学堂在线（始皇）
 // @namespace    http://tampermonkey.net/
-// @version      2024-10-14
+// @version      2024-10-15
 // @description  Auto play next video on XueTangX
 // @author       秦始皇
 // @match        https://www.xuetangx.com/*
