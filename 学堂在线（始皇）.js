@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         学堂在线（始皇）
 // @namespace    http://tampermonkey.net/
-// @version      2024-10-15
+// @version      2024-10-16
 // @description  Auto play next video on XueTangX
 // @author       秦始皇
 // @match        https://www.xuetangx.com/*
@@ -14,6 +14,7 @@
     'use strict';
     let a = '';
     let b = [];
+    const maxLogEntries = 50;
 
     function c() {
         if (document.getElementById('logWindow')) return;
@@ -42,6 +43,12 @@
         const i = new Date().toLocaleTimeString();
         h.innerHTML += `[${i}] ${g}<br>`;
         h.scrollTop = h.scrollHeight;
+
+        // 限制日志条数，避免内存增长
+        const lines = h.innerHTML.split('<br>');
+        if (lines.length > maxLogEntries) {
+            h.innerHTML = lines.slice(lines.length - maxLogEntries).join('<br>');
+        }
     }
 
     function j(g) {
@@ -134,11 +141,14 @@
             j('未找到播放按钮');
         }
 
-        C.removeEventListener('ended', x);
-        C.addEventListener('ended', function() {
-            j('视频播放结束');
-            x();
-        });
+        // 防止事件监听器重复绑定
+        if (!C.hasAttribute('data-ended-listener')) {
+            C.setAttribute('data-ended-listener', 'true');
+            C.addEventListener('ended', function() {
+                j('视频播放结束');
+                x();
+            });
+        }
     }
 
     function G() {
@@ -168,5 +178,6 @@
         }, 5000);
     });
 })();
+
 
 
