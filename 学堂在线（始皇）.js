@@ -6,6 +6,8 @@
 // @author       秦始皇
 // @match        https://www.xuetangx.com/*
 // @icon         https://storagecdn.xuetangx.com/public_assets/xuetangx/xuetangX2018/7f0a03259697d168b92e4d9d9208116f.loadingbg.gif
+// @updateURL    https://raw.githubusercontent.com/2754026865/jiaoben/refs/heads/main/%E5%AD%A6%E5%A0%82%E5%9C%A8%E7%BA%BF%EF%BC%88%E5%A7%8B%E7%9A%87%EF%BC%89.js
+// @downloadURL  https://raw.githubusercontent.com/2754026865/jiaoben/refs/heads/main/%E5%AD%A6%E5%A0%82%E5%9C%A8%E7%BA%BF%EF%BC%88%E5%A7%8B%E7%9A%87%EF%BC%89.js
 // @grant        none
 // ==/UserScript==
 (function() {
