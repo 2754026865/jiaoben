@@ -94,59 +94,65 @@
         }
     }
 
-function A() {
-    const B = document.querySelector('.xt_video_player_play_btn');
-    const C = document.querySelector('video');
+    function A() {
+        const B = document.querySelector('.xt_video_player_play_btn');
+        const C = document.querySelector('video');
 
-    if (!C) {
-        j('当前为“答题”页，直接点击“下一课”');
-        G();
-        return;
-    }
-
-    const E = document.querySelector('li .title.active .titlespan.noScore');
-    if (E) {
-        const F = E.innerText.trim();
-        if (F !== a) {
-            a = F;
-            j(`当前播放视频的标题为：${a}`);
+        if (!C) {
+            j('当前为“答题”页，直接点击“下一课”');
+            G();
+            return;
         }
-    } else {
-        j('未找到当前播放视频的标题');
-    }
 
-    if (B) {
-        const playTip = B.querySelector('.play-btn-tip')?.innerText.trim();
-        if (playTip === '暂停') {
-            j('视频正在播放');
-        } else if (playTip === '播放') {
-            j('视频暂停，尝试点击播放按钮');
-            const videoElement = document.querySelector('video');
-            if (videoElement) {
-                videoElement.play();
-                j('直接调用视频播放');
-            } else {
-                B.click();
-                j('已点击播放按钮恢复视频播放');
+        const E = document.querySelector('li .title.active .titlespan.noScore');
+        if (E) {
+            const F = E.innerText.trim();
+            if (F !== a) {
+                a = F;
+                j(`当前播放视频的标题为：${a}`);
             }
+        } else {
+            j('未找到当前播放视频的标题');
         }
-    } else {
-        j('未找到播放按钮');
+
+        if (B) {
+            const playTip = B.querySelector('.play-btn-tip')?.innerText.trim();
+            if (playTip === '暂停') {
+                j('视频正在播放');
+            } else if (playTip === '播放') {
+                j('视频暂停，尝试点击播放按钮');
+                const videoElement = document.querySelector('video');
+                if (videoElement) {
+                    videoElement.play();
+                    j('视频播放成功');
+                } else {
+                    B.click();
+                    j('已点击播放按钮恢复视频播放');
+                }
+            }
+        } else {
+            j('未找到播放按钮');
+        }
+
+        C.removeEventListener('ended', x);
+        C.addEventListener('ended', function() {
+            j('视频播放结束');
+            x();
+        });
     }
-
-    C.removeEventListener('ended', x);
-    C.addEventListener('ended', function() {
-        j('视频播放结束');
-        x();
-    });
-}
-
 
     function G() {
-        const H = document.querySelector('p.next');
+        const H = document.querySelector('div.control p.next span.textover');
         if (H) {
-            j('点击“下一课”按钮');
-            H.click();
+            const nextLessonText = H.innerText.trim();
+            j(`找到“下一课”按钮，单元内容为：${nextLessonText}`);
+
+            if (nextLessonText.includes('下一单元')) {
+                j('点击“下一课”按钮');
+                H.closest('p.next').click(); // 点击包含“下一课”按钮的父级元素
+            } else {
+                j('未找到有效的“下一课”单元内容');
+            }
         } else {
             j('未找到“下一课”按钮');
         }
@@ -162,4 +168,5 @@ function A() {
         }, 5000);
     });
 })();
+
 
