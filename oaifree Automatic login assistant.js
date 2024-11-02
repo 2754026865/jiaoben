@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         OAIFree Automatic login assistant
+// @name         OAIFree 多Token自动登录助手
 // @namespace    http://tampermonkey.net/
 // @version      0.3
-// @description  支持多个refresh token，用户可随时选择token并自动登录，方便切换账号
+// @description  支持多个refresh token，用户可随时选择token并自动登录，方便在不同账号之间切换
 // @author       You
 // @match        https://new.oaifree.com/*
 // @grant        GM_xmlhttpRequest
@@ -12,6 +12,7 @@
 // @connect      token.oaifree.com
 // @connect      chat.oaifree.com
 // @updateURL    https://raw.githubusercontent.com/2754026865/jiaoben/refs/heads/main/oaifree%20Automatic%20login%20assistant.js
+// @downloadURL  https://raw.githubusercontent.com/2754026865/jiaoben/refs/heads/main/oaifree%20Automatic%20login%20assistant.js
 // ==/UserScript==
 
 (function() {
