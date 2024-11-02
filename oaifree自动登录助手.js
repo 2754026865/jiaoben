@@ -17,7 +17,7 @@
     'use strict';
     // 预设的多个refresh token
     const refreshTokens = [
-        'OtMNY0n88CXgDZY8UCt_xw1c0P2_-O5AIcbEr1Zb5RIoH',
+        '**************',
         // 添加更多的refresh token
     ];
 
