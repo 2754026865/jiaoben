@@ -11,7 +11,7 @@
 // @grant        GM_registerMenuCommand
 // @connect      token.oaifree.com
 // @connect      chat.oaifree.com
-// @updateURL    https://raw.githubusercontent.com/2754026865/jiaoben/refs/heads/main/oaifree自动登录助手.js
+// @updateURL    https://raw.githubusercontent.com/2754026865/jiaoben/refs/heads/main/oaifree%20Automatic%20login%20assistant.js
 // ==/UserScript==
 
 (function() {
