@@ -1,11 +1,13 @@
 // ==UserScript==
 // @name         cda网校刷课
 // @namespace    http://tampermonkey.net/
-// @version      1.5
+// @version      1.6
 // @description  自动点击"学过了"并跳转到下一任务，同时添加日志窗口
 // @author       You
 // @match        https://edu.cda.cn/course/*
 // @grant        none
+// @updateURL    https://github.com/2754026865/jiaoben/raw/refs/heads/main/cda%E7%BD%91%E6%A0%A1%E5%88%B7%E8%AF%BE-1.5.user.js
+// @downloadURL  https://github.com/2754026865/jiaoben/raw/refs/heads/main/cda%E7%BD%91%E6%A0%A1%E5%88%B7%E8%AF%BE-1.5.user.js
 // ==/UserScript==
 (function() {
     'use strict';
